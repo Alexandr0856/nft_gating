@@ -1,0 +1,11 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:1856/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:1856/new_join/6097590664/EQB_8-NMSSkr7y61aNyHgCmu1ROKsP-VvXcVMx01NLgq5Bf7
+Accept: application/json
+
+###
