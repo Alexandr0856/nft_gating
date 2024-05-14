@@ -1,0 +1,24 @@
+version: "3.3"
+
+services:
+  api:
+    container_name: api
+    restart: always
+    networks:
+      - common_network
+    ports:
+      - "1856:8000"
+    volumes:
+      - ./api:/api
+    build:
+      context: .
+      dockerfile: docker/api/Dockerfile
+    env_file:
+      - environments/telegram.env
+      - environments/postgres.env
+      - environments/ton.env
+
+
+networks:
+  common_network:
+    driver: bridge
