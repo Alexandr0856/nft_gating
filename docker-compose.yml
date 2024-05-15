@@ -4,19 +4,33 @@ services:
   api:
     container_name: api
     restart: always
-    networks:
-      - common_network
     ports:
       - "1856:8000"
     volumes:
       - ./api:/api
+    networks:
+      - common_network
     build:
       context: .
       dockerfile: docker/api/Dockerfile
     env_file:
-      - environments/telegram.env
-      - environments/postgres.env
-      - environments/ton.env
+      - ./environments/telegram.env
+      - ./environments/postgres.env
+      - ./environments/ton.env
+
+  telegram:
+    container_name: telegram
+    restart: always
+    networks:
+      - common_network
+    volumes:
+      - ./telegram:/telegram
+    build:
+      context: .
+      dockerfile: docker/telegram/Dockerfile
+    env_file:
+      - ./environments/postgres.env
+      - ./environments/telegram.env
 
 
 networks:

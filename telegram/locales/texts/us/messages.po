@@ -1,0 +1,11 @@
+msgid "help"
+msgstr "Here's a list of available commands:\n/help - Show this help message\n/start - Start the bot"
+
+msgid "start"
+msgstr "It’s a pleasure to see you again."
+
+msgid "request_contact"
+msgstr "We kindly request your phone number to facilitate the identification process by our esteemed restaurant staff, ensuring that you receive exclusive privileges tailored to each of your experiences."
+
+msgid "answer_on_response_contact"
+msgstr "We are glad to welcome you to the community."

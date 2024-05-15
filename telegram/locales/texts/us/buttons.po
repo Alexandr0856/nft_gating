@@ -1,0 +1,2 @@
+msgid "contact_request"
+msgstr "Share my phone number"

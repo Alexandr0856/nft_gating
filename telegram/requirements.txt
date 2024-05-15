@@ -1,0 +1,4 @@
+psycopg2==2.9.9
+aiogram==3.6.0
+loguru==0.7.2
+polib==1.2.0
