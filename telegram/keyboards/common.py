@@ -25,3 +25,16 @@ def get_contact_keyboard():
     )
 
     return contact_keyboard
+
+
+def invite_link_keyboard(invite_link: str):
+    return ReplyKeyboardMarkup(
+        resize_keyboard=True,
+        one_time_keyboard=True,
+        keyboard=[[
+            KeyboardButton(
+                text=get_button_text("invite_link", "us"),
+                url=invite_link
+            )]
+        ]
+    )
