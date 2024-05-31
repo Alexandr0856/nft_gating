@@ -10,7 +10,7 @@ async def root():
     return {"message": "Glory to Ukraine!"}
 
 
-@app.get("/new_join/{user_id}/{address}")
-async def say_hello(user_id: int, address: str):
-    res = await generate_join_link(user_id, address)
+@app.get("/new_join/{user_id}/{nft_address}")
+async def say_hello(user_id: int, nft_address: str):
+    res = await generate_join_link(user_id, nft_address)
     return {"invite_link": res}
