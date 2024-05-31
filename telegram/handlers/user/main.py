@@ -15,6 +15,6 @@ def get_user_router() -> Router:
     userRouter.message.register(help_handler, help_command)
     userRouter.message.register(contact_handler, F.contact)
 
-    userRouter.message.register(join_handler, F.chat_join_request)
+    userRouter.chat_join_request(join_handler)
 
     return userRouter
