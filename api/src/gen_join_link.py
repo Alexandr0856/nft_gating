@@ -26,9 +26,10 @@ async def generate_join_link(user_id: int, nft_address: str) -> str:
 
     grope_id = get_group_by_collection(db_cursor, item.collection_address)
 
-    user_info = requests.get(base_link + f"getChatMember?chat_id={grope_id}&user_id={user_id}").json()
+    # user_info = requests.get(f"{base_link}getChatMember?chat_id={grope_id}&user_id={user_id}").json()
 
-    join_link = requests.get(base_link + f"createChatInviteLink?chat_id={grope_id}&member_limit=1").json()
+    request = f"{base_link}createChatInviteLink?chat_id={grope_id}&member_limit=1&creates_join_request=true"
+    join_link = requests.get(request).json()
 
     if join_link['ok'] and join_link['result'] and join_link['result']['invite_link']:
         return join_link['result']['invite_link']
